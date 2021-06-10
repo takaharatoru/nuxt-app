@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import firebase from '@/plugins/firebase'
 
 export interface Shop {
   image?: string
@@ -29,17 +30,21 @@ export default Vue.extend({
     shops: [] as any,
   }),
   created() {
-    const shop: Shop = {
-      image: '/shop.jpeg',
-      shopName: 'ナクストコーヒー',
-      score: 3,
-      description:
-        '東京で人気沸騰中！リーズナブルな価格で本格的な入れたての美味しいコーヒーが飲めるお店。',
-    }
+    const db = firebase.firestore()
+    const dbShops = db.collection('shops')
+    dbShops.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const data = doc.data()
 
-    for (let i = 0; i < 9; i++) {
-      this.shops.push(shop)
-    }
+        const shop: Shop = {
+          image: data.image ? data.image : '/no-image.png',
+          shopName: data.shopName ? data.shopName : '',
+          score: data.score ? data.score : 0,
+          description: data.description ? data.description : '',
+        }
+        this.shops.push(shop)
+      })
+    })
   },
 })
 </script>

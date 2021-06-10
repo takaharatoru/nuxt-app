@@ -3,31 +3,14 @@
     <div><img class="shop-image" :src="$props.image" alt="" /></div>
     <div class="shop-info">
       <div class="shop-name">{{ $props.shopName }}</div>
-      <div class="shop-score">
-        <StarRating
-          v-model="$props.score"
-          :star-size="StarRatingConfig.starSize"
-          :read-only="StarRatingConfig.readOnly"
-        />
-      </div>
+      <div class="shop-score">{{ $props.score }}</div>
       <div class="shop-description">{{ $props.description }}</div>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import StarRating from 'vue-star-rating'
-
 export default Vue.extend({
-  components: {
-    StarRating,
-  },
-  data: () => ({
-    StarRatingConfig: {
-      starSize: 18,
-      readOnly: true,
-    },
-  }),
   props: {
     image: {
       type: String,
@@ -73,25 +56,11 @@ export default Vue.extend({
 }
 
 .shop-score {
-  float: right;
+  text-align: right;
 }
 
 .shop-description {
-  margin-top: 32px;
+  margin-top: 12px;
   font-size: 14px;
-}
-
-/** 追加 */
-
-@media screen and (max-width: 767px) {
-  .shop-card {
-    width: 90vw;
-  }
-}
-
-.shop-info {
-  padding: 4px;
-  height: 150px;
-  overflow: hidden;
 }
 </style>

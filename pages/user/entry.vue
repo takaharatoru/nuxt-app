@@ -7,11 +7,11 @@
     <br /><br />
   </div>
 </template>
- 
+
 <script lang="ts">
 import Vue from 'vue'
 import { userStore } from '~/store'
- 
+
 export default Vue.extend({
   data: () => ({
     user: {
@@ -27,5 +27,5 @@ export default Vue.extend({
   },
 })
 </script>
- 
+
 <style></style>

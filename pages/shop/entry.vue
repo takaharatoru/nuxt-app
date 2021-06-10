@@ -19,7 +19,7 @@
     <div>
       <button class="entry-btn" @click="entryShop()">登録</button>
     </div>
- 
+
     <div class="message">
       <div v-if="entryDocId">
         FirestoreにDocId:{{ entryDocId }}で登録しました。
@@ -28,11 +28,11 @@
     </div>
   </div>
 </template>
- 
+
 <script lang="ts">
 import Vue from 'vue'
 import firebase from '@/plugins/firebase'
- 
+
 export default Vue.extend({
   data: () => ({
     shop: {
@@ -51,7 +51,7 @@ export default Vue.extend({
         this.errorMessage = '店名と店舗紹介は必須です'
         return
       }
- 
+
       const db = firebase.firestore()
       const dbShops = db.collection('shops')
       dbShops
@@ -65,7 +65,7 @@ export default Vue.extend({
           this.shop.shopName = ''
           this.shop.description = ''
           this.shop.image = ''
- 
+
           this.inputFileReset()
         })
         .catch((err) => {
@@ -74,13 +74,13 @@ export default Vue.extend({
     },
     upload(e: any) {
       const file = e.target.files[0]
- 
+
       if (!file.type.includes('image')) {
         this.errorMessage = '画像を指定してください'
         this.inputFileReset()
         return
       }
- 
+
       const storageRef = firebase.storage().ref(file.name)
       storageRef.put(file).then(() => {
         firebase
@@ -104,12 +104,12 @@ export default Vue.extend({
   },
 })
 </script>
- 
+
 <style>
 h2 {
   margin-bottom: 20px;
 }
- 
+
 .shop-entry {
   width: 600px;
   padding: 16px;
@@ -119,23 +119,23 @@ h2 {
   box-shadow: 1px 1px 4px 1px rgb(218, 218, 218);
   color: #333;
 }
- 
+
 .preview-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
- 
+
 .entry-input-row {
   padding: 12px;
 }
- 
+
 .enrty-label {
   width: 100px;
   display: inline-block;
   vertical-align: top;
 }
- 
+
 input[type='text'] {
   width: 400px;
   font-size: 18px;
@@ -144,7 +144,7 @@ textarea {
   width: 400px;
   font-size: 18px;
 }
- 
+
 .entry-btn {
   width: 200px;
   font-size: 18px;
@@ -158,7 +158,7 @@ textarea {
   background-color: cornflowerblue;
   border: 0px;
 }
- 
+
 .message {
   margin: 12px;
   padding: 12px;
