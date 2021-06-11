@@ -41,11 +41,13 @@
 }
 
 .menu {
-  padding: 12px 24px;
+  color: #364e96;
+  border: solid 3px #364e96;
+  padding: 0.5em;
+  border-radius: 0.5em;
   display: inline-block;
-  border: 2px solid #000;
-  border-radius: 0;
-  background: #FFF8DC;
+  text-decoration: none;
+  margin-right: 20px;
 }
 .menu:hover{
   color: #fff;
