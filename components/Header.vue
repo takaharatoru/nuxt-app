@@ -1,12 +1,12 @@
 <template>
   <div class="header">
     <div class="logo-text">
-      BookShop Review
-      <span class="sub-title">〜便利な書店をご紹介〜</span>
+      Self Review
+      <span class="sub-title">〜描いた作品を自己採点〜</span>
     </div>
     <div>
       <nuxt-link class="menu" to="/shop/"> 掲載一覧 </nuxt-link>
-      <nuxt-link class="menu" to="/shop/entry"> 好きなお店を登録 </nuxt-link>
+      <nuxt-link class="menu" to="/shop/entry"> 描いた作品を登録 </nuxt-link>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@
 }
 
 .logo-text {
-  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  font-family: 'Skia-Regular_Black',sans-serif;
   font-size: 50px;
   padding: 12px 24px;
 }

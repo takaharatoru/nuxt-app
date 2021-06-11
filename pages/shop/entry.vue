@@ -1,6 +1,6 @@
 <template>
   <div class="shop-entry">
-    <h2>ショップ登録</h2>
+    <h2>作品登録</h2>
     <div v-if="shop.image">
       <img class="preview-image" :src="shop.image" alt="" />
     </div>
@@ -9,11 +9,11 @@
       ><input v-if="reset" @change="upload" type="file" />
     </div>
     <div class="entry-input-row">
-      <span class="enrty-label">店名</span
+      <span class="enrty-label">作品名</span
       ><input type="text" v-model="shop.shopName" />
     </div>
     <div class="entry-input-row">
-      <span class="enrty-label">店舗紹介</span>
+      <span class="enrty-label">作品紹介</span>
       <textarea v-model="shop.description" rows="5"></textarea>
     </div>
     <div>

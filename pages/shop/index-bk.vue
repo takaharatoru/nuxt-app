@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content-title">RecomendStore</div>
+    <div class="content-title">★ArtCollection☆</div>
     <div class="shop-list">
       <div v-for="shop in shops" :key="shop.index">
         <Shop
