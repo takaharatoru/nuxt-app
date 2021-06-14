@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <div class="logo-text">
+    <nuxt-link class="title" to="/">
       Self Review
+      </nuxt-link>
       <span class="sub-title">〜描いた作品を自己採点〜</span>
     </div>
     <div>
@@ -38,6 +40,10 @@
   .sub-title {
     display: none;
   }
+}
+.title{
+  text-decoration: none;
+  color: black;
 }
 
 .menu {
